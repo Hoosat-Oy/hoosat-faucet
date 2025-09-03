@@ -1,39 +1,39 @@
-# Kaspa Faucet
+# Hoosat Faucet
 
-Miniature Kaspa faucet website based on [Kaspa Wallet](https://github.com/aspectron/kaspa-wallet) framework
+Miniature Hoosat faucet website based on [Hoosat Wallet](https://github.com/aspectron/hoosat-wallet) framework
 
-### Setup Kaspad
+### Setup Hoosatd
 
-    $ git clone git@github.com:kaspanet/kaspad
-    $ cd kaspad
+    $ git clone git@github.com:hoosatnet/hoosatd
+    $ cd hoosatd
     $ go build
-    $ cd cmd/kaspaminer
+    $ cd cmd/hoosatminer
     $ go build
 
-### Run Kaspad Testnet
-Terminal 1: 
+### Run Hoosatd Testnet
 
-    $ cd kaspad
-    $ kaspad --utxoindex --testnet
+Terminal 1:
 
+    $ cd hoosatd
+    $ hoosatd --utxoindex --testnet
 
-Terminal 2: 
+Terminal 2:
 
-    $ cd kaspad/cmd/kaspaminer
-    $ kaspaminer --miningaddr=kaspatest:qpuyhaxz2chn3lsvf8g7q5uvaezpp5m7pyny4k8tyq --mine-when-not-synced --testnet
+    $ cd hoosatd/cmd/hoosatminer
+    $ hoosatminer --miningaddr=hoosattest:qpuyhaxz2chn3lsvf8g7q5uvaezpp5m7pyny4k8tyq --mine-when-not-synced --testnet
 
-*IMPORTANT: `kaspad 8.4 (master)` has a broken testnet genesis block, you must replace `--testnet` with `--devnet` and change the mining address to `kaspadev:qpuyhaxz2chn3lsvf8g7q5uvaezpp5m7pygf2jzn8d`.* *When changing configuration you may need to delete Kaspa blockchain located in `~/kaspad` folder. On Windows Kaspa blockchain is located in `AppData/Local/Kaspad`.* *(When starting, faucet will display it's deposit address.)*
+_IMPORTANT: `hoosatd 8.4 (master)` has a broken testnet genesis block, you must replace `--testnet` with `--devnet` and change the mining address to `hoosatdev:qpuyhaxz2chn3lsvf8g7q5uvaezpp5m7pygf2jzn8d`._ _When changing configuration you may need to delete Hoosat blockchain located in `~/hoosatd` folder. On Windows Hoosat blockchain is located in `AppData/Local/Hoosatd`._ _(When starting, faucet will display it's deposit address.)_
 
 ### Running
 
-    $ git clone git@github.com:aspectron/kaspa-faucet
-    $ cd kaspa-faucet
+    $ git clone git@github.com:aspectron/hoosat-faucet
+    $ cd hoosat-faucet
     $ npm install
-    $ node kaspa-faucet
+    $ node hoosat-faucet
 
 ### Development Environment
 
-To setup development environment for debugging kaspa-wallet and kaspacore-lib modules:
+To setup development environment for debugging hoosat-wallet and hoosatcore-lib modules:
 
 Setup TypeScript:
 
@@ -43,32 +43,29 @@ Setup TypeScript:
 
 Clone and setup repositories:
 
-    $ git clone git@github.com:aspectron/kaspa-faucet
-    $ git clone git@github.com:aspectron/kaspa-wallet
-    $ git clone git@github.com:aspectron/kaspacore-lib
-    $ cd kaspacore-lib
+    $ git clone git@github.com:aspectron/hoosat-faucet
+    $ git clone git@github.com:aspectron/hoosat-wallet
+    $ git clone git@github.com:aspectron/hoosatcore-lib
+    $ cd hoosatcore-lib
     $ npm link
     $ cd ..
-    $ cd kaspa-wallet
+    $ cd hoosat-wallet
     $ npm link
-    $ npm link kaspacore-lib
+    $ npm link hoosatcore-lib
     $ cd ..
-    $ cd kaspa-faucet
+    $ cd hoosat-faucet
     $ npm install
-    $ npm link kaspa-wallet
+    $ npm link hoosat-wallet
     $ cd ..
 
 Terminal 1:
 
-    $ cd kaspa-wallet
+    $ cd hoosat-wallet
     $ tsc --watch
 
 Terminal 2:
 
-    $ cd kaspa-faucet
-    $ node kaspa-faucet
-    
-`node kaspa-faucet` will attempt to bind to all available networks. You can use `--devnet` and `--testnet` flags to have it bind to a single network.
+    $ cd hoosat-faucet
+    $ node hoosat-faucet
 
-
-
+`node hoosat-faucet` will attempt to bind to all available networks. You can use `--devnet` and `--testnet` flags to have it bind to a single network.

@@ -1,8 +1,8 @@
 
 const E = new Emanator(__dirname, {
 	type : 'NODE',
-	banner : 'kaspa faucet',
-	git : 'git@github.com:aspectron/kaspa-faucet',
+	banner : 'hoosat faucet',
+	git : 'git@github.com:aspectron/hoosat-faucet',
 	production: true,
 });
 
@@ -14,27 +14,27 @@ const npm = await E.modules.npm({ production : true });
 if(E.args.includes('update'))
     await npm.reinstall();
 
-if(E.args.includes('kaspad')) {
+if(E.args.includes('hoosatd')) {
 
-    let dest = path.join(go.SRC,'github.com/kaspanet/');
+    let dest = path.join(go.SRC,'github.com/hoosatnet/');
     if((E.flags.reset || E.flags.clean) && fs.existsSync(dest))
         await E.emptyDir(dest);
 
-	await git.clone(`https://github.com/kaspanet/kaspad`, dest);
+	await git.clone(`https://github.com/hoosatnet/hoosatd`, dest);
 
 	let targets = [
-		'kaspad',
-		'kaspad/cmd/kaspaminer'
+		'hoosatd',
+		'hoosatd/cmd/hoosatminer'
 	];
 
 	// if(E.flags['nodns']) {
-	// 	const params = path.join(dest,'kaspad/domain/dagconfig/params.go');
+	// 	const params = path.join(dest,'hoosatd/domain/dagconfig/params.go');
 	// 	let text = fs.readFileSync(params,'utf-8');
-	// 	text.replace('testnet-dnsseed.kas.pa:17100','testnet-dnsseed.kdx.app:17100');
+	// 	text.replace('testnet-dnsseed.htn.pa:17100','testnet-dnsseed.kdx.app:17100');
 	// 	fs.writeFileSync(params,text,{encoding:'utf-8'});
 	// }
 
-	console.log('Building kaspa binaries...')
+	console.log('Building hoosat binaries...')
 	let folders = []
 	for(let target of targets) {
 		let folder = path.join(dest,target);

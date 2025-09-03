@@ -31,10 +31,10 @@ RUN rm package-lock.json
 
 RUN npm install
 RUN npm install -g emanator@latest
-RUN emanate kaspad
+RUN emanate hoosatd
 
 USER faucet
 
 EXPOSE 16110 16210 16510 16610 16111 16211 16511 16611
 
-ENTRYPOINT ["node","kaspa-faucet-website.js","--run-kdx","--testnet","--devnet"]
+ENTRYPOINT ["node","hoosat-faucet-website.js","--run-kdx","--testnet","--devnet"]

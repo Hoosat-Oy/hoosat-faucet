@@ -1,20 +1,20 @@
 {
-  "name": "@kaspa/faucet",
+  "name": "@hoosat/faucet",
   "version": "1.0.32",
-  "description": "kaspa-faucet",
+  "description": "hoosat-faucet",
   "scripts": {
-    "start": "node kaspa-faucet"
+    "start": "node hoosat-faucet"
   },
-  "main": "kaspa-faucet.js",
+  "main": "hoosat-faucet.js",
   "dependencies": {
     "@aspectron/flow-http": ">=0.2.4",
     "@aspectron/flow-router": "aspectron/flow-router",
     "@aspectron/flow-utils": ">=0.1.1",
     "@aspectron/flow-ux": ">=1.0.0",
+    "@hoosat/wallet": ">=1.4.33",
+    "@hoosat/wallet-worker": ">=1.1.26",
     "@kaspa/grpc": ">=1.4.0",
     "@kaspa/grpc-node": ">=1.0.8",
-    "@kaspa/wallet": ">=1.4.21",
-    "@kaspa/wallet-worker": ">=1.1.18",
     "@webcomponents/webcomponentsjs": "*",
     "colors": "*",
     "commander": "^6.2.1",
@@ -30,8 +30,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aspectron/kaspa-faucet"
+    "url": "git+https://github.com/aspectron/hoosat-faucet"
   },
   "license": "ICS",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^24.3.0"
+  }
 }
