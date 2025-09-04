@@ -81,8 +81,8 @@ export class FaucetForm extends BaseElement {
 
     if (!address) return this.setError("Please enter address");
 
-    amount = parseFloat(amount) || 0;
-    if (!amount || amount < 1e-8 || amount > 100000) return this.setError("Please enter amount between 1-1000");
+    amount = parseFloat(amount.replace(",", ".")) || 0;
+    if (!amount || amount < 1e-8 || amount > 100000) return this.setError("Please enter amount between 0.0000001-0.35");
 
     amount = Decimal(amount).mul(1e8);
 
