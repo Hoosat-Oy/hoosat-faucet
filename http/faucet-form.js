@@ -54,7 +54,7 @@ export class FaucetForm extends BaseElement {
     return html`
       <div class="message">Enter your address and the amount of Hoosat you want to receive:</div>
       <flow-input
-        label="Address (Must start with '${this.network}' prefix)"
+        label="Address (Must start with '${this.network.replace("-mainnet", "").replace("-testnet", "")}' prefix)"
         class="address"
         x-value="${this.address}"
       ></flow-input>
